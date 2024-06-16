@@ -1,10 +1,377 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Homa en taildwind</title>
     <link rel="stylesheet" href="estilos/estilos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="js/carrusel.js" defer></script>
+    <style>
+      /* Aplica el box-sizing: border-box a todos los elementos */
+      *,
+      *::before,
+      *::after {
+        @apply box-border;
+      }
+
+      /* Dejo margenes laterales en las resoluciones muy grandes */
+      @media (min-width: 1400px) {
+        header,
+        main,
+        #contenedor-footer {
+          @apply w-[1400px] mx-auto;
+        }
+      }
+    </style>
   </head>
-  <body></body>
+
+  <body class="font-comfortaa font-lexend h-screen bg-blanco">
+    <header class="w-full">
+      <section class="m-4 flex justify-between m-g:mx-8 m-g:my-4">
+        <article class="flex items-center">
+          <a class="max-w-[100px] min-w-[50px] h-auto" href="#">
+            <img id="logo-diurno" src="imagenes/logo_claro.webp" alt="logo" />
+          </a>
+          <div
+            class="font-bold text-verde font-comfortaa lg:flex lg:flex-row lg:items-center"
+          >
+            <p class="m-0 pr-2 pb-2 lg:text-3xl">Clínica</p>
+            <p class="m-0 pr-2 pb-2 lg:text-3xl">Psicológica</p>
+            <p class="m-0 pb-2 lg:text-3xl">Adelante</p>
+          </div>
+        </article>
+        <a
+          class="boton-contacto transition-all duration-200 transform hover:scale-110 active:scale-110"
+          href="#"
+          >¿Hablamos?</a
+        >
+      </section>
+      <!--Código preformado extraído de: https://flowbite.com/docs/forms/select/-->
+      <form class="max-w-sm mx-auto">
+        <label for="underline_select" class="sr-only">Underline select</label>
+        <select
+          id="underline_select"
+          class="block py-2.5 px-0 w-full text-sm text-negro bg-verde border-0 border-b-2 border-azul-claro appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"
+        >
+          <option selected class="text-center">Menú</option>
+          <option value="TO">Terapias Ofrecidas</option>
+          <option value="A">Ansiedad</option>
+          <option value="D">Depresión</option>
+          <option value="TS">Trastorno Sexual</option>
+          <option value="TP">Terapia de Pareja</option>
+          <option value="P">Sobre tu psicóloga</option>
+          <option value="S">Cómo son las sesiones</option>
+        </select>
+      </form>
+    </header>
+
+    <main class="w-full mt-2">
+      <!--Carrusel de: https://flowbite.com/docs/components/carousel/-->
+      <div
+        id="indicators-carousel"
+        class="relative w-full"
+        data-carousel="static"
+      >
+        <!-- Carousel wrapper -->
+        <div class="relative overflow-hidden rounded-lg h-600">
+          <!-- Item 1 -->
+          <div
+            class="hidden duration-700 ease-in-out sm:bg-ansiedad-movil md:bg-ansiedad-tablet lg:bg-ansiedad-escritorio flex justify-start items-center bg-cover bg-no-repeat bg-center h-96"
+            data-carousel-item="active"
+          >
+            <div
+              class="bg-azul-oscuro m-4 p-4 text-center rounded-lg w-1/2 sm:w-1/3 ml-10"
+            >
+              <h5 class="text-verde">Ansiedad</h5>
+              <p class="font-lexend text-azul-claro">
+                Preocupación excesiva, agotamiento, irritabilidad..., a veces
+                nos sentimos así, pero si te está sobrepasando es mejor pedir
+                ayuda.
+              </p>
+              <a
+                class="boton-contacto transition-all duration-200 transform hover:scale-110 active:scale-110"
+                href="#"
+                >¿Hablamos?</a
+              >
+            </div>
+          </div>
+          <!-- Item 2 -->
+          <div
+            class="hidden duration-700 ease-in-out sm:bg-depresion-movil md:bg-depresion-tablet lg:bg-depresion-escritorio flex justify-end items-center bg-cover bg-no-repeat bg-center h-96"
+            data-carousel-item
+          >
+            <div
+              class="bg-verde m-4 p-4 text-center rounded-lg w-1/2 sm:w-1/3 mr-10"
+            >
+              <h5 class="text-azul-oscuro">Depresión</h5>
+              <p class="font-lexend text-blanco">
+                Tristeza, falta de energía, desinterés por las cosas que antes
+                te gustaban son síntomas comunes de la depresión. Es más fácil
+                superarlo con ayuda.
+              </p>
+              <a
+                class="boton-contacto transition-all duration-200 transform hover:scale-110 active:scale-110"
+                href="#"
+                >¿Hablamos?</a
+              >
+            </div>
+          </div>
+          <!-- Item 3 -->
+          <div
+            class="hidden duration-700 ease-in-out sm:bg-sexual-movil md:bg-sexual-tablet lg:bg-sexual-escritorio flex justify-start items-center bg-cover bg-no-repeat bg-center h-96"
+            data-carousel-item
+          >
+            <div
+              class="bg-azul-oscuro m-4 p-4 text-center rounded-lg w-1/2 sm:w-1/3 ml-10"
+            >
+              <h5 class="text-verde">Trastorno Sexual</h5>
+              <p class="font-lexend text-azul-claro">
+                La sexualidad es un aspecto importante de la vida, si tienes
+                problemas o dudas en este ámbito no dudes en pedir ayuda.
+              </p>
+              <a
+                class="boton-contacto transition-all duration-200 transform hover:scale-110 active:scale-110"
+                href="#"
+                >¿Hablamos?</a
+              >
+            </div>
+          </div>
+          <!-- Item 4 -->
+          <div
+            class="hidden duration-700 ease-in-out sm:bg-pareja-movil md:bg-pareja-tablet lg:bg-pareja-escritorio flex justify-end items-center bg-cover bg-no-repeat bg-center h-96"
+            data-carousel-item
+          >
+            <div
+              class="bg-verde m-4 p-4 text-center rounded-lg w-1/2 sm:w-1/3 mr-10"
+            >
+              <h5 class="text-azul-oscuro">Terapia de Pareja</h5>
+              <p class="font-lexend text-blanco">
+                La convivencia en pareja puede ser complicada, pero con ayuda
+                profesional se pueden superar los obstáculos.
+              </p>
+              <a
+                class="boton-contacto transition-all duration-200 transform hover:scale-110 active:scale-110"
+                href="#"
+                >¿Hablamos?</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Slider indicators -->
+        <div
+          class="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2"
+        >
+          <button
+            type="button"
+            class="w-3 h-3 rounded-full"
+            aria-current="true"
+            aria-label="Slide 1"
+            data-carousel-slide-to="0"
+          ></button>
+          <button
+            type="button"
+            class="w-3 h-3 rounded-full"
+            aria-current="false"
+            aria-label="Slide 2"
+            data-carousel-slide-to="1"
+          ></button>
+          <button
+            type="button"
+            class="w-3 h-3 rounded-full"
+            aria-current="false"
+            aria-label="Slide 3"
+            data-carousel-slide-to="2"
+          ></button>
+          <button
+            type="button"
+            class="w-3 h-3 rounded-full"
+            aria-current="false"
+            aria-label="Slide 4"
+            data-carousel-slide-to="3"
+          ></button>
+          <button
+            type="button"
+            class="w-3 h-3 rounded-full"
+            aria-current="false"
+            aria-label="Slide 5"
+            data-carousel-slide-to="4"
+          ></button>
+        </div>
+        <!-- Slider controls -->
+        <button
+          type="button"
+          class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+          data-carousel-prev
+        >
+          <span
+            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+          >
+            <svg
+              class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 6 10"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 1 1 5l4 4"
+              />
+            </svg>
+            <span class="sr-only">Previous</span>
+          </span>
+        </button>
+        <button
+          type="button"
+          class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+          data-carousel-next
+        >
+          <span
+            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+          >
+            <svg
+              class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 6 10"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 9 4-4-4-4"
+              />
+            </svg>
+            <span class="sr-only">Next</span>
+          </span>
+        </button>
+      </div>
+
+      <section id="terapeuta-home">
+        <h5 class="titulo">Mari Sol García Martínez</h5>
+        <picture>
+          <source
+            type="image/webp"
+            media="(max-width: 768px)"
+            srcset="imagenes/psicologa_290.webp" />
+          <img
+            class="imagen imagen_terapeuta"
+            src="imagenes/psicologa_400.webp"
+            alt="foto de la psicóloga"
+        /></picture>
+        <article id="texto_terapeuta_home" class="texto">
+          <p>
+            Desde que me gradué en Psicología por la Universidad de Granada he
+            acumulado más de 10 años de experiencia tratando trastornos
+            psicológicos en adultos.
+          </p>
+          <p>
+            Mi compromiso es ofrecer la garantía de calidad y profesionalidad en
+            las terapias que aplico para garantizar así el mejor tratamiento
+            para mis clientes, por ello sigo la corriente cognitiva-conductual
+            ya que es la que mayor efectividad ha demostrado hoy día.
+          </p>
+          <p>
+            Me preocupo por crear un entorno seguro y de confianza para mis
+            clientes para que puedan lograr sus objetivos.
+          </p>
+        </article>
+        <a
+          class="boton-contacto transition-all duration-200 transform hover:scale-110 active:scale-110"
+          href="#"
+          >¿Hablamos?</a
+        >
+      </section>
+
+      <section id="contactos_home">
+        <h5 class="titulo">Contacto</h5>
+        <article class="formas_contacto">
+          <p class="calle">Calle La Salud Mental s/n</p>
+          <a class="telefono" href="tel:+34777777777">+34 777777777</a>
+        </article>
+        <a
+          class="boton-contacto transition-all duration-200 transform hover:scale-110 active:scale-110"
+          href="#"
+          >¿Hablamos?</a
+        >
+        <article id="mapa_home">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3178.337261477686!2d-3.6189490242935305!3d37.192218072138026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd71fcf9589cae9d%3A0xd64971351144a933!2sIES%20Francisco%20Ayala!5e0!3m2!1ses!2ses!4v1707394392413!5m2!1ses!2ses"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="mapa de la ubicación de la clínica"
+          ></iframe>
+        </article>
+      </section>
+    </main>
+
+    <footer class="w-full">
+      <div id="contenedor-footer">
+        <section class="m-4 flex justify-between m-g:mx-8 m-g:my-4">
+          <article class="flex items-center">
+            <a class="max-w-[100px] min-w-[50px] h-auto" href="#">
+              <img
+                id="logo-nocturno"
+                src="imagenes/logo_oscuro.webp"
+                alt="logo"
+              />
+            </a>
+
+            <div class="text-verde font-bold">
+              <p>Clínica</p>
+              <p>Psicológica</p>
+              <p>Adelante</p>
+            </div>
+          </article>
+          <a
+            class="boton-contacto transition-all duration-200 transform hover:scale-110 active:scale-110"
+            href="#"
+            >¿Hablamos?</a
+          >
+        </section>
+        <section id="contacto-footer">
+          <article class="formas_contacto">
+            <p class="calle">Calle La Salud Mental s/n</p>
+            <a class="telefono" href="tel:+34777777777">+34 777777777</a>
+          </article>
+          <article class="redes">
+            <a href="#">
+              <img
+                src="./imagenes/linkedin.webp"
+                alt="enlace a cuenta de linkedin"
+              />
+            </a>
+            <a href="#">
+              <img
+                src="./imagenes/insta.webp"
+                alt="enlace a cuenta de instagram"
+              />
+            </a>
+
+            <a href="#">
+              <img
+                src="./imagenes/facebook.webp"
+                alt="enlace a cuenta de facebook"
+              />
+            </a>
+          </article>
+        </section>
+      </div>
+    </footer>
+  </body>
 </html>

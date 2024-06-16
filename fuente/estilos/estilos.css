@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/*Estilos personalizados*/
+.boton-contacto {
+  width: fit-content;
+  height: fit-content;
+  border: none;
+  padding: 1rem 2rem;
+  background-color: #afe4f3;
+  border-radius: 32px;
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  text-decoration: none;
+  font-family: "Lexend";
+  color: #031a03;
+}
