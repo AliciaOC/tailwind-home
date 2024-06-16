@@ -19,6 +19,12 @@
       *::after {
         @apply box-border;
       }
+      header,
+      main,
+      #contenedor-footer {
+        max-width: 1400px;
+        margin: 0 auto;
+      }
 
       /* Dejo margenes laterales en las resoluciones muy grandes */
       @media (min-width: 1400px) {
@@ -31,15 +37,18 @@
     </style>
   </head>
 
-  <body class="font-comfortaa font-lexend h-screen bg-blanco">
+  <body class="font-comfortaa font-lexend h-screen bg-blanco max-w-xg mx-auto">
     <header class="w-full">
       <section class="m-4 flex justify-between m-g:mx-8 m-g:my-4">
         <article class="flex items-center">
-          <a class="max-w-[100px] min-w-[50px] h-auto" href="#">
+          <a
+            class="max-w-[100px] min-w-[50px] h-auto hover:scale-110 active:scale-110"
+            href="#"
+          >
             <img id="logo-diurno" src="imagenes/logo_claro.webp" alt="logo" />
           </a>
           <div
-            class="font-bold text-verde font-comfortaa lg:flex lg:flex-row lg:items-center"
+            class="ml-2 font-bold text-verde font-comfortaa lg:flex lg:flex-row lg:items-center"
           >
             <p class="m-0 pr-2 pb-2 lg:text-3xl">Clínica</p>
             <p class="m-0 pr-2 pb-2 lg:text-3xl">Psicológica</p>
@@ -57,16 +66,26 @@
         <label for="underline_select" class="sr-only">Underline select</label>
         <select
           id="underline_select"
-          class="block py-2.5 px-0 w-full text-sm text-negro bg-verde border-0 border-b-2 border-azul-claro appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"
+          class="block py-2.5 px-0 w-full text-sm text-negro bg-verde border-0 border-b-2 border-azul-claro appearance-none dark:text-azul-claro dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer rounded-full"
         >
-          <option selected class="text-center">Menú</option>
-          <option value="TO">Terapias Ofrecidas</option>
-          <option value="A">Ansiedad</option>
-          <option value="D">Depresión</option>
-          <option value="TS">Trastorno Sexual</option>
-          <option value="TP">Terapia de Pareja</option>
-          <option value="P">Sobre tu psicóloga</option>
-          <option value="S">Cómo son las sesiones</option>
+          <option selected class="text-center bg-azul-claro">Menú</option>
+          <option value="TO" class="text-center bg-azul-claro">
+            Terapias Ofrecidas
+          </option>
+          <option value="A" class="text-center bg-azul-claro">Ansiedad</option>
+          <option value="D" class="text-center bg-azul-claro">Depresión</option>
+          <option value="TS" class="text-center bg-azul-claro">
+            Trastorno Sexual
+          </option>
+          <option value="TP" class="text-center bg-azul-claro">
+            Terapia de Pareja
+          </option>
+          <option value="P" class="text-center bg-azul-claro">
+            Sobre tu psicóloga
+          </option>
+          <option value="S" class="text-center bg-azul-claro">
+            Cómo son las sesiones
+          </option>
         </select>
       </form>
     </header>
@@ -79,7 +98,7 @@
         data-carousel="static"
       >
         <!-- Carousel wrapper -->
-        <div class="relative overflow-hidden rounded-lg h-600">
+        <div class="relative overflow-hidden rounded-lg h-700">
           <!-- Item 1 -->
           <div
             class="hidden duration-700 ease-in-out sm:bg-ansiedad-movil md:bg-ansiedad-tablet lg:bg-ansiedad-escritorio flex justify-start items-center bg-cover bg-no-repeat bg-center h-96"
@@ -95,7 +114,7 @@
                 ayuda.
               </p>
               <a
-                class="boton-contacto transition-all duration-200 transform hover:scale-110 active:scale-110"
+                class="boton-contacto transition-all duration-200 transform hover:scale-110 active:scale-110 mx-auto mt-4"
                 href="#"
                 >¿Hablamos?</a
               >
@@ -116,7 +135,7 @@
                 superarlo con ayuda.
               </p>
               <a
-                class="boton-contacto transition-all duration-200 transform hover:scale-110 active:scale-110"
+                class="boton-contacto transition-all duration-200 transform hover:scale-110 active:scale-110 mx-auto mt-4"
                 href="#"
                 >¿Hablamos?</a
               >
@@ -136,7 +155,7 @@
                 problemas o dudas en este ámbito no dudes en pedir ayuda.
               </p>
               <a
-                class="boton-contacto transition-all duration-200 transform hover:scale-110 active:scale-110"
+                class="boton-contacto transition-all duration-200 transform hover:scale-110 active:scale-110 mx-auto mt-4"
                 href="#"
                 >¿Hablamos?</a
               >
@@ -156,7 +175,7 @@
                 profesional se pueden superar los obstáculos.
               </p>
               <a
-                class="boton-contacto transition-all duration-200 transform hover:scale-110 active:scale-110"
+                class="boton-contacto transition-all duration-200 transform hover:scale-110 active:scale-110 mx-auto mt-4"
                 href="#"
                 >¿Hablamos?</a
               >
@@ -236,7 +255,7 @@
           data-carousel-next
         >
           <span
-            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-azul-claro dark:group-focus:ring-gray-800/70 group-focus:outline-none"
           >
             <svg
               class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
@@ -336,16 +355,20 @@
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
             title="mapa de la ubicación de la clínica"
+            class="max-w-full"
           ></iframe>
         </article>
       </section>
     </main>
 
     <footer class="w-full bg-azul-oscuro">
-      <div id="contenedor-footer">
-        <section class="m-4 flex justify-between m-g:mx-8 m-g:my-4">
-          <article class="flex items-center">
-            <a class="max-w-[100px] min-w-[50px] h-auto" href="#">
+      <div id="contenedor-footer" class="p-2">
+        <section class="flex justify-between m-g:mx-8 m-g:my-4">
+          <article class="flex items-center mt-4">
+            <a
+              class="max-w-[100px] min-w-[50px] h-auto hover:scale-110 active:scale-110"
+              href="#"
+            >
               <img
                 id="logo-nocturno"
                 src="imagenes/logo_oscuro.webp"
@@ -353,7 +376,7 @@
               />
             </a>
 
-            <div class="text-verde md:text-2xl">
+            <div class="ml-2 text-verde font-comfortaa md:text-2xl">
               <p>Clínica</p>
               <p>Psicológica</p>
               <p>Adelante</p>
@@ -365,26 +388,26 @@
             >¿Hablamos?</a
           >
         </section>
-        <section id="contacto-footer">
-          <article class="formas_contacto">
+        <section id="contacto-footer" class="w-full">
+          <article class="text-verde text-center font-comfortaa">
             <p class="calle">Calle La Salud Mental s/n</p>
             <a class="telefono" href="tel:+34777777777">+34 777777777</a>
           </article>
-          <article class="redes">
-            <a href="#">
+          <article class="flex justify-center m-4">
+            <a href="#" class="mr-4 pr-4 hover:scale-110 active:scale-110">
               <img
                 src="./imagenes/linkedin.webp"
                 alt="enlace a cuenta de linkedin"
               />
             </a>
-            <a href="#">
+            <a href="#" class="hover:scale-110 active:scale-110">
               <img
                 src="./imagenes/insta.webp"
                 alt="enlace a cuenta de instagram"
               />
             </a>
 
-            <a href="#">
+            <a href="#" class="ml-4 pl-4 hover:scale-110 active:scale-110">
               <img
                 src="./imagenes/facebook.webp"
                 alt="enlace a cuenta de facebook"
