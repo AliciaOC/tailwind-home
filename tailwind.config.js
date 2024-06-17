@@ -26,7 +26,7 @@ module.exports = {
         lexend: ['Lexend', 'sans-serif'],
       },
       backgroundImage: {
-        'ansiedad-movil':'url(../imagenes/ansiedad-movil.webp")',
+        'ansiedad-movil':"url('../imagenes/ansiedad-movil.webp')",
         'depresion-movil':'url("../imagenes/depresion-movil.webp")',
         'sexual-movil':'url("../imagenes/sexual-movil.webp")',
         'pareja-movil':'url("../imagenes/pareja-movil.webp")',
